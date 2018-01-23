@@ -2,14 +2,14 @@ module.exports = {
     entry: './src/index.js',
 
     output: {
-        path: __dirname + '/page',
+        path: __dirname + '/',
         filename: 'bundle.js'
     },
 
     devServer: {
         inline: true,
         port: 7777,
-        contentBase: __dirname + '/page'
+        contentBase: __dirname + '/'
     },
 
     module: {

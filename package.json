@@ -4,14 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d page",
     "start": "webpack-dev-server --hot --host 0.0.0.0",
     "build": "webpack"
   },
   "author": "seokhee.park",
   "license": "ISC",
-  "homepage": "http://pshsh88.github.io/pshsh88-web",
   "dependencies": {
     "gh-pages": "^1.1.0",
     "react": "^16.2.0",
