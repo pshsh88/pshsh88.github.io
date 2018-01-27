@@ -18365,11 +18365,70 @@ var Header = function (_React$Component) {
 
             return _react2.default.createElement(
                 "div",
-                { "class": "header" },
+                { className: "header" },
                 _react2.default.createElement(
-                    "span",
-                    null,
-                    "Header"
+                    "nav",
+                    { className: "navbar navbar-inverse navbar-fixed-top" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "container" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "navbar-header" },
+                            _react2.default.createElement(
+                                "button",
+                                { type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#navbar", "aria-expanded": "false", "aria-controls": "navbar" },
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "sr-only" },
+                                    "Toggle navigation"
+                                ),
+                                _react2.default.createElement("span", { className: "icon-bar" }),
+                                _react2.default.createElement("span", { className: "icon-bar" }),
+                                _react2.default.createElement("span", { className: "icon-bar" })
+                            ),
+                            _react2.default.createElement(
+                                "a",
+                                { className: "navbar-brand", href: "#" },
+                                "PSHSH88"
+                            )
+                        ),
+                        _react2.default.createElement(
+                            "div",
+                            { id: "navbar", className: "collapse navbar-collapse" },
+                            _react2.default.createElement(
+                                "ul",
+                                { className: "nav navbar-nav" },
+                                _react2.default.createElement(
+                                    "li",
+                                    { className: "active" },
+                                    _react2.default.createElement(
+                                        "a",
+                                        { href: "#" },
+                                        "Home"
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    "li",
+                                    null,
+                                    _react2.default.createElement(
+                                        "a",
+                                        { href: "#about" },
+                                        "About"
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    "li",
+                                    null,
+                                    _react2.default.createElement(
+                                        "a",
+                                        { href: "#contact" },
+                                        "Contact"
+                                    )
+                                )
+                            )
+                        )
+                    )
                 )
             );
         }
@@ -18397,10 +18456,6 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Menu = __webpack_require__(30);
-
-var _Menu2 = _interopRequireDefault(_Menu);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18419,22 +18474,30 @@ var Content = function (_React$Component) {
     }
 
     _createClass(Content, [{
-        key: 'render',
+        key: "render",
         value: function render() {
 
             return _react2.default.createElement(
-                'div',
-                { 'class': 'content' },
+                "div",
+                { className: "content" },
                 _react2.default.createElement(
-                    'div',
-                    { 'class': 'main' },
+                    "div",
+                    { className: "jumbotron" },
                     _react2.default.createElement(
-                        'h1',
-                        null,
-                        'Hello. This page is under construction.'
+                        "div",
+                        { className: "container" },
+                        _react2.default.createElement(
+                            "h1",
+                            null,
+                            "Hello!"
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            null,
+                            "This page is under construction. please visit again after the updated."
+                        )
                     )
-                ),
-                _react2.default.createElement(_Menu2.default, null)
+                )
             );
         }
     }]);
@@ -18443,57 +18506,6 @@ var Content = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Content;
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Menu = function (_React$Component) {
-    _inherits(Menu, _React$Component);
-
-    function Menu() {
-        _classCallCheck(this, Menu);
-
-        return _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).apply(this, arguments));
-    }
-
-    _createClass(Menu, [{
-        key: 'render',
-        value: function render() {
-
-            return _react2.default.createElement(
-                'div',
-                null,
-                'The menu has several items.'
-            );
-        }
-    }]);
-
-    return Menu;
-}(_react2.default.Component);
-
-exports.default = Menu;
 
 /***/ })
 /******/ ]);

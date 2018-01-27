@@ -1,15 +1,16 @@
 import React from 'react';
-import Menu from './Menu';
 
 class Content extends React.Component {
     render(){
 
         return (
-                <div class="content">
-                    <div class="main">
-                        <h1>Hello. This page is under construction.</h1>
+                <div className="content">
+                    <div className="jumbotron">
+                        <div className="container">
+                            <h1>Hello!</h1>
+                            <p>This page is under construction. please visit again after the updated.</p>
+                        </div>
                     </div>
-                    <Menu />
                 </div>
         );
     }
