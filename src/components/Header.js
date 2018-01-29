@@ -1,8 +1,22 @@
 import React from 'react';
+import Menu from './Menu';
 
 class Header extends React.Component {
+    updateActiveMenuName(menuName) {
+        this.setState({
+            activeMenuName: menuName
+        });
+    }
+    
+    constructor(props) {
+        super(props);
+        this.state = {
+            activeMenuName: "Home"
+        };
+        this.updateActiveMenuName = this.updateActiveMenuName.bind(this);
+    }
+    
     render(){
-
         return (
             <div className="header">
                 <nav className="navbar navbar-inverse navbar-fixed-top">
@@ -16,13 +30,7 @@ class Header extends React.Component {
                             </button>
                             <a className="navbar-brand" href="#">PSHSH88</a>
                         </div>
-                        <div id="navbar" className="collapse navbar-collapse">
-                            <ul className="nav navbar-nav">
-                                <li className="active"><a href="#">Home</a></li>
-                                <li><a href="#about">About</a></li>
-                                <li><a href="#contact">Contact</a></li>
-                            </ul>
-                        </div>
+                        <Menu activeMenuName={this.state.activeMenuName} updateActiveMenuName={this.updateActiveMenuName}/>
                     </div>
                 </nav>
             </div>
