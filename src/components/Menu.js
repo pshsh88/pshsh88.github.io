@@ -28,8 +28,9 @@ class Menu extends React.Component {
             <div id="navbar" className="collapse navbar-collapse">
                 <ul className="nav navbar-nav">
                     <MenuItem name="Home" active={this.isActiveItem("Home")} updateActiveItemName={this.updateActiveItemName}/>
+                    <MenuItem name="Note" active={this.isActiveItem("Note")} updateActiveItemName={this.updateActiveItemName}/>
+                    <MenuItem name="Practice" active={this.isActiveItem("Practice")} updateActiveItemName={this.updateActiveItemName}/>
                     <MenuItem name="About" active={this.isActiveItem("About")} updateActiveItemName={this.updateActiveItemName}/>
-                    <MenuItem name="Contact" active={this.isActiveItem("Contact")} updateActiveItemName={this.updateActiveItemName}/>
                 </ul>
             </div>
         );

@@ -1,11 +1,13 @@
 import React from 'react';
 import Menu from './Menu';
+import PropTypes from 'prop-types';
 
 class Header extends React.Component {
     updateActiveMenuName(menuName) {
         this.setState({
             activeMenuName: menuName
         });
+        this.props.updateContent(menuName);
     }
     
     constructor(props) {
@@ -28,7 +30,7 @@ class Header extends React.Component {
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
                             </button>
-                            <a className="navbar-brand" href="#">PSHSH88</a>
+                            <a className="navbar-brand" href="javascript:void(0);">PSHSH88</a>
                         </div>
                         <Menu activeMenuName={this.state.activeMenuName} updateActiveMenuName={this.updateActiveMenuName}/>
                     </div>
@@ -36,6 +38,10 @@ class Header extends React.Component {
             </div>
         );
     }
+}
+
+Header.propTypes = {
+    updateContent: PropTypes.func.isRequired
 }
 
 export default Header;
