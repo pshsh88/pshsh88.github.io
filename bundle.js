@@ -650,6 +650,41 @@ module.exports = ReactPropTypesSecret;
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (process.env.NODE_ENV !== 'production') {
+  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
+    Symbol.for &&
+    Symbol.for('react.element')) ||
+    0xeac7;
+
+  var isValidElement = function(object) {
+    return typeof object === 'object' &&
+      object !== null &&
+      object.$$typeof === REACT_ELEMENT_TYPE;
+  };
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(32)(isValidElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(33)();
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -686,7 +721,7 @@ var ExecutionEnvironment = {
 module.exports = ExecutionEnvironment;
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -767,7 +802,7 @@ module.exports = EventListener;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -809,7 +844,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 module.exports = getActiveElement;
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -880,7 +915,7 @@ function shallowEqual(objA, objB) {
 module.exports = shallowEqual;
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -923,7 +958,7 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -951,41 +986,6 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-if (process.env.NODE_ENV !== 'production') {
-  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
-    Symbol.for &&
-    Symbol.for('react.element')) ||
-    0xeac7;
-
-  var isValidElement = function(object) {
-    return typeof object === 'object' &&
-      object !== null &&
-      object.$$typeof === REACT_ELEMENT_TYPE;
-  };
-
-  // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
-  var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(32)(isValidElement, throwOnDirectAccess);
-} else {
-  // By explicitly using `prop-types` you are opting into new production behavior.
-  // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(33)();
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 16 */
@@ -2467,7 +2467,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(1),l=__webpack_require__(9),B=__webpack_require__(3),C=__webpack_require__(2),ba=__webpack_require__(10),da=__webpack_require__(11),ea=__webpack_require__(12),fa=__webpack_require__(13),ia=__webpack_require__(14),D=__webpack_require__(5);
+var aa=__webpack_require__(1),l=__webpack_require__(10),B=__webpack_require__(3),C=__webpack_require__(2),ba=__webpack_require__(11),da=__webpack_require__(12),ea=__webpack_require__(13),fa=__webpack_require__(14),ia=__webpack_require__(15),D=__webpack_require__(5);
 function E(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:E("227");
 var oa={children:!0,dangerouslySetInnerHTML:!0,defaultValue:!0,defaultChecked:!0,innerHTML:!0,suppressContentEditableWarning:!0,suppressHydrationWarning:!0,style:!0};function pa(a,b){return(a&b)===b}
 var ta={MUST_USE_PROPERTY:1,HAS_BOOLEAN_VALUE:4,HAS_NUMERIC_VALUE:8,HAS_POSITIVE_NUMERIC_VALUE:24,HAS_OVERLOADED_BOOLEAN_VALUE:32,HAS_STRING_BOOLEAN_VALUE:64,injectDOMPropertyConfig:function(a){var b=ta,c=a.Properties||{},d=a.DOMAttributeNamespaces||{},e=a.DOMAttributeNames||{};a=a.DOMMutationMethods||{};for(var f in c){ua.hasOwnProperty(f)?E("48",f):void 0;var g=f.toLowerCase(),h=c[f];g={attributeName:g,attributeNamespace:null,propertyName:f,mutationMethod:null,mustUseProperty:pa(h,b.MUST_USE_PROPERTY),
@@ -2767,14 +2767,14 @@ if (process.env.NODE_ENV !== "production") {
 var React = __webpack_require__(1);
 var invariant = __webpack_require__(4);
 var warning = __webpack_require__(6);
-var ExecutionEnvironment = __webpack_require__(9);
+var ExecutionEnvironment = __webpack_require__(10);
 var _assign = __webpack_require__(3);
 var emptyFunction = __webpack_require__(2);
-var EventListener = __webpack_require__(10);
-var getActiveElement = __webpack_require__(11);
-var shallowEqual = __webpack_require__(12);
-var containsNode = __webpack_require__(13);
-var focusNode = __webpack_require__(14);
+var EventListener = __webpack_require__(11);
+var getActiveElement = __webpack_require__(12);
+var shallowEqual = __webpack_require__(13);
+var containsNode = __webpack_require__(14);
+var focusNode = __webpack_require__(15);
 var emptyObject = __webpack_require__(5);
 var checkPropTypes = __webpack_require__(7);
 var hyphenateStyleName = __webpack_require__(24);
@@ -18336,10 +18336,25 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var App = function (_React$Component) {
     _inherits(App, _React$Component);
 
-    function App() {
+    _createClass(App, [{
+        key: 'updateContent',
+        value: function updateContent(menuName) {
+            this.setState({
+                activeMenuName: menuName
+            });
+        }
+    }]);
+
+    function App(props) {
         _classCallCheck(this, App);
 
-        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+        _this.state = {
+            activeMenuName: "Home"
+        };
+        _this.updateContent = _this.updateContent.bind(_this);
+        return _this;
     }
 
     _createClass(App, [{
@@ -18349,8 +18364,8 @@ var App = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_Header2.default, null),
-                _react2.default.createElement(_Content2.default, null)
+                _react2.default.createElement(_Header2.default, { updateContent: this.updateContent }),
+                _react2.default.createElement(_Content2.default, { activeMenuName: this.state.activeMenuName })
             );
         }
     }]);
@@ -18381,6 +18396,10 @@ var _Menu = __webpack_require__(30);
 
 var _Menu2 = _interopRequireDefault(_Menu);
 
+var _propTypes = __webpack_require__(9);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18398,6 +18417,7 @@ var Header = function (_React$Component) {
             this.setState({
                 activeMenuName: menuName
             });
+            this.props.updateContent(menuName);
         }
     }]);
 
@@ -18442,7 +18462,7 @@ var Header = function (_React$Component) {
                             ),
                             _react2.default.createElement(
                                 'a',
-                                { className: 'navbar-brand', href: '#' },
+                                { className: 'navbar-brand', href: 'javascript:void(0);' },
                                 'PSHSH88'
                             )
                         ),
@@ -18455,6 +18475,10 @@ var Header = function (_React$Component) {
 
     return Header;
 }(_react2.default.Component);
+
+Header.propTypes = {
+    updateContent: _propTypes2.default.func.isRequired
+};
 
 exports.default = Header;
 
@@ -18479,7 +18503,7 @@ var _MenuItem = __webpack_require__(31);
 
 var _MenuItem2 = _interopRequireDefault(_MenuItem);
 
-var _propTypes = __webpack_require__(15);
+var _propTypes = __webpack_require__(9);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -18532,8 +18556,9 @@ var Menu = function (_React$Component) {
                     'ul',
                     { className: 'nav navbar-nav' },
                     _react2.default.createElement(_MenuItem2.default, { name: 'Home', active: this.isActiveItem("Home"), updateActiveItemName: this.updateActiveItemName }),
-                    _react2.default.createElement(_MenuItem2.default, { name: 'About', active: this.isActiveItem("About"), updateActiveItemName: this.updateActiveItemName }),
-                    _react2.default.createElement(_MenuItem2.default, { name: 'Contact', active: this.isActiveItem("Contact"), updateActiveItemName: this.updateActiveItemName })
+                    _react2.default.createElement(_MenuItem2.default, { name: 'Note', active: this.isActiveItem("Note"), updateActiveItemName: this.updateActiveItemName }),
+                    _react2.default.createElement(_MenuItem2.default, { name: 'Practice', active: this.isActiveItem("Practice"), updateActiveItemName: this.updateActiveItemName }),
+                    _react2.default.createElement(_MenuItem2.default, { name: 'About', active: this.isActiveItem("About"), updateActiveItemName: this.updateActiveItemName })
                 )
             );
         }
@@ -18566,7 +18591,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(15);
+var _propTypes = __webpack_require__(9);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -18586,6 +18611,11 @@ var MenuItem = function (_React$Component) {
         value: function updateActivation() {
             this.props.updateActiveItemName(this.props.name);
         }
+    }, {
+        key: 'getLink',
+        value: function getLink(name) {
+            return "#" + (name ? name.toLowerCase() : "");
+        }
     }]);
 
     function MenuItem(props) {
@@ -18594,6 +18624,7 @@ var MenuItem = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (MenuItem.__proto__ || Object.getPrototypeOf(MenuItem)).call(this, props));
 
         _this.updateActivation = _this.updateActivation.bind(_this);
+        _this.getLink = _this.getLink.bind(_this);
         return _this;
     }
 
@@ -18605,7 +18636,7 @@ var MenuItem = function (_React$Component) {
                 { className: this.props.active ? "active" : "" },
                 _react2.default.createElement(
                     'a',
-                    { href: '#', onClick: this.updateActivation },
+                    { href: this.getLink(this.props.name), onClick: this.updateActivation },
                     this.props.name
                 )
             );
@@ -19266,19 +19297,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Content = function (_React$Component) {
     _inherits(Content, _React$Component);
 
-    function Content() {
-        _classCallCheck(this, Content);
-
-        return _possibleConstructorReturn(this, (Content.__proto__ || Object.getPrototypeOf(Content)).apply(this, arguments));
-    }
-
     _createClass(Content, [{
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement(
-                "div",
-                { className: "content" },
-                _react2.default.createElement(
+        key: "updateContentBy",
+        value: function updateContentBy(menuName) {
+            if (menuName === "Home") {
+                return _react2.default.createElement(
                     "div",
                     { className: "jumbotron" },
                     _react2.default.createElement(
@@ -19295,7 +19318,60 @@ var Content = function (_React$Component) {
                             "This page is under construction. please visit again after the updated."
                         )
                     )
-                )
+                );
+            } else if (menuName === "Note") {
+                return _react2.default.createElement(
+                    "div",
+                    { style: { padding: 48 + 'px' } },
+                    _react2.default.createElement(
+                        "h2",
+                        null,
+                        "NOTE"
+                    )
+                );
+            } else if (menuName === "Practice") {
+                return _react2.default.createElement(
+                    "div",
+                    { style: { padding: 48 + 'px' } },
+                    _react2.default.createElement(
+                        "h2",
+                        null,
+                        "PRACTICE"
+                    )
+                );
+            } else if (menuName === "About") {
+                return _react2.default.createElement(
+                    "div",
+                    { style: { padding: 48 + 'px' } },
+                    _react2.default.createElement(
+                        "h2",
+                        null,
+                        "ABOUT"
+                    )
+                );
+            }
+        }
+    }]);
+
+    function Content(props) {
+        _classCallCheck(this, Content);
+
+        var _this = _possibleConstructorReturn(this, (Content.__proto__ || Object.getPrototypeOf(Content)).call(this, props));
+
+        _this.state = {
+            activeMenuName: _this.props.activeMenuName
+        };
+        _this.updateContentBy = _this.updateContentBy.bind(_this);
+        return _this;
+    }
+
+    _createClass(Content, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "content" },
+                this.updateContentBy(this.props.activeMenuName)
             );
         }
     }]);
