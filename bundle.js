@@ -18364,7 +18364,7 @@ var App = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_Header2.default, { updateContent: this.updateContent }),
+                _react2.default.createElement(_Header2.default, { activeMenuName: this.state.activeMenuName, updateContent: this.updateContent }),
                 _react2.default.createElement(_Content2.default, { activeMenuName: this.state.activeMenuName })
             );
         }
@@ -18414,9 +18414,6 @@ var Header = function (_React$Component) {
     _createClass(Header, [{
         key: 'updateActiveMenuName',
         value: function updateActiveMenuName(menuName) {
-            this.setState({
-                activeMenuName: menuName
-            });
             this.props.updateContent(menuName);
         }
     }]);
@@ -18426,9 +18423,6 @@ var Header = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this, props));
 
-        _this.state = {
-            activeMenuName: "Home"
-        };
         _this.updateActiveMenuName = _this.updateActiveMenuName.bind(_this);
         return _this;
     }
@@ -18466,7 +18460,7 @@ var Header = function (_React$Component) {
                                 'PSHSH88'
                             )
                         ),
-                        _react2.default.createElement(_Menu2.default, { activeMenuName: this.state.activeMenuName, updateActiveMenuName: this.updateActiveMenuName })
+                        _react2.default.createElement(_Menu2.default, { activeMenuName: this.props.activeMenuName, updateActiveMenuName: this.updateActiveMenuName })
                     )
                 )
             );
@@ -18477,7 +18471,8 @@ var Header = function (_React$Component) {
 }(_react2.default.Component);
 
 Header.propTypes = {
-    updateContent: _propTypes2.default.func.isRequired
+    updateContent: _propTypes2.default.func.isRequired,
+    activeMenuName: _propTypes2.default.string.isRequired
 };
 
 exports.default = Header;
@@ -18519,17 +18514,14 @@ var Menu = function (_React$Component) {
     _inherits(Menu, _React$Component);
 
     _createClass(Menu, [{
-        key: 'updateActiveItemName',
-        value: function updateActiveItemName(itemName) {
-            this.setState({
-                activeItemName: itemName
-            });
-            this.props.updateActiveMenuName(itemName);
+        key: 'updateActiveMenuName',
+        value: function updateActiveMenuName(menuName) {
+            this.props.updateActiveMenuName(menuName);
         }
     }, {
-        key: 'isActiveItem',
-        value: function isActiveItem(itemName) {
-            return itemName === this.state.activeItemName;
+        key: 'isActiveMenu',
+        value: function isActiveMenu(menuName) {
+            return menuName === this.props.activeMenuName;
         }
     }]);
 
@@ -18538,11 +18530,8 @@ var Menu = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).call(this, props));
 
-        _this.state = {
-            activeItemName: _this.props.activeMenuName
-        };
-        _this.updateActiveItemName = _this.updateActiveItemName.bind(_this);
-        _this.isActiveItem = _this.isActiveItem.bind(_this);
+        _this.updateActiveMenuName = _this.updateActiveMenuName.bind(_this);
+        _this.isActiveMenu = _this.isActiveMenu.bind(_this);
         return _this;
     }
 
@@ -18555,10 +18544,10 @@ var Menu = function (_React$Component) {
                 _react2.default.createElement(
                     'ul',
                     { className: 'nav navbar-nav' },
-                    _react2.default.createElement(_MenuItem2.default, { name: 'Home', active: this.isActiveItem("Home"), updateActiveItemName: this.updateActiveItemName }),
-                    _react2.default.createElement(_MenuItem2.default, { name: 'Note', active: this.isActiveItem("Note"), updateActiveItemName: this.updateActiveItemName }),
-                    _react2.default.createElement(_MenuItem2.default, { name: 'Practice', active: this.isActiveItem("Practice"), updateActiveItemName: this.updateActiveItemName }),
-                    _react2.default.createElement(_MenuItem2.default, { name: 'About', active: this.isActiveItem("About"), updateActiveItemName: this.updateActiveItemName })
+                    _react2.default.createElement(_MenuItem2.default, { name: 'Home', active: this.isActiveMenu("Home"), updateActiveMenuName: this.updateActiveMenuName }),
+                    _react2.default.createElement(_MenuItem2.default, { name: 'Note', active: this.isActiveMenu("Note"), updateActiveMenuName: this.updateActiveMenuName }),
+                    _react2.default.createElement(_MenuItem2.default, { name: 'Practice', active: this.isActiveMenu("Practice"), updateActiveMenuName: this.updateActiveMenuName }),
+                    _react2.default.createElement(_MenuItem2.default, { name: 'About', active: this.isActiveMenu("About"), updateActiveMenuName: this.updateActiveMenuName })
                 )
             );
         }
@@ -18609,7 +18598,7 @@ var MenuItem = function (_React$Component) {
     _createClass(MenuItem, [{
         key: 'updateActivation',
         value: function updateActivation() {
-            this.props.updateActiveItemName(this.props.name);
+            this.props.updateActiveMenuName(this.props.name);
         }
     }, {
         key: 'getLink',
@@ -18647,7 +18636,7 @@ var MenuItem = function (_React$Component) {
 }(_react2.default.Component);
 
 MenuItem.propTypes = {
-    updateActiveItemName: _propTypes2.default.func.isRequired,
+    updateActiveMenuName: _propTypes2.default.func.isRequired,
     active: _propTypes2.default.bool.isRequired,
     name: _propTypes2.default.string.isRequired
 };

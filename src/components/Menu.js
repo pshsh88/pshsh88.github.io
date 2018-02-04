@@ -3,34 +3,28 @@ import MenuItem from './MenuItem';
 import PropTypes from 'prop-types';
 
 class Menu extends React.Component {
-    updateActiveItemName(itemName) {
-        this.setState({
-            activeItemName: itemName
-        });
-        this.props.updateActiveMenuName(itemName);
+    updateActiveMenuName(menuName) {
+        this.props.updateActiveMenuName(menuName);
     }
     
-    isActiveItem(itemName) {
-        return itemName === this.state.activeItemName;
+    isActiveMenu(menuName) {
+        return menuName === this.props.activeMenuName;
     }
     
     constructor(props) {
         super(props);
-        this.state = {
-            activeItemName: this.props.activeMenuName
-        };
-        this.updateActiveItemName = this.updateActiveItemName.bind(this);
-        this.isActiveItem = this.isActiveItem.bind(this);
+        this.updateActiveMenuName = this.updateActiveMenuName.bind(this);
+        this.isActiveMenu = this.isActiveMenu.bind(this);
     }
     
     render(){
         return (
             <div id="navbar" className="collapse navbar-collapse">
                 <ul className="nav navbar-nav">
-                    <MenuItem name="Home" active={this.isActiveItem("Home")} updateActiveItemName={this.updateActiveItemName}/>
-                    <MenuItem name="Note" active={this.isActiveItem("Note")} updateActiveItemName={this.updateActiveItemName}/>
-                    <MenuItem name="Practice" active={this.isActiveItem("Practice")} updateActiveItemName={this.updateActiveItemName}/>
-                    <MenuItem name="About" active={this.isActiveItem("About")} updateActiveItemName={this.updateActiveItemName}/>
+                    <MenuItem name="Home" active={this.isActiveMenu("Home")} updateActiveMenuName={this.updateActiveMenuName}/>
+                    <MenuItem name="Note" active={this.isActiveMenu("Note")} updateActiveMenuName={this.updateActiveMenuName}/>
+                    <MenuItem name="Practice" active={this.isActiveMenu("Practice")} updateActiveMenuName={this.updateActiveMenuName}/>
+                    <MenuItem name="About" active={this.isActiveMenu("About")} updateActiveMenuName={this.updateActiveMenuName}/>
                 </ul>
             </div>
         );

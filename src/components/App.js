@@ -21,7 +21,7 @@ class App extends React.Component {
 
         return (
             <div>
-                <Header updateContent={this.updateContent} />
+                <Header activeMenuName={this.state.activeMenuName} updateContent={this.updateContent} />
                 <Content activeMenuName={this.state.activeMenuName} />
             </div>
         );

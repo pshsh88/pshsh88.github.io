@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class MenuItem extends React.Component {
     updateActivation() {
-        this.props.updateActiveItemName(this.props.name);
+        this.props.updateActiveMenuName(this.props.name);
     }
     
     getLink(name) {
@@ -24,7 +24,7 @@ class MenuItem extends React.Component {
 }
 
 MenuItem.propTypes = {
-    updateActiveItemName: PropTypes.func.isRequired,
+    updateActiveMenuName: PropTypes.func.isRequired,
     active: PropTypes.bool.isRequired,
     name: PropTypes.string.isRequired
 }

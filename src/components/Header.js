@@ -4,17 +4,11 @@ import PropTypes from 'prop-types';
 
 class Header extends React.Component {
     updateActiveMenuName(menuName) {
-        this.setState({
-            activeMenuName: menuName
-        });
         this.props.updateContent(menuName);
     }
     
     constructor(props) {
         super(props);
-        this.state = {
-            activeMenuName: "Home"
-        };
         this.updateActiveMenuName = this.updateActiveMenuName.bind(this);
     }
     
@@ -32,7 +26,7 @@ class Header extends React.Component {
                             </button>
                             <a className="navbar-brand" href="javascript:void(0);">PSHSH88</a>
                         </div>
-                        <Menu activeMenuName={this.state.activeMenuName} updateActiveMenuName={this.updateActiveMenuName}/>
+                        <Menu activeMenuName={this.props.activeMenuName} updateActiveMenuName={this.updateActiveMenuName}/>
                     </div>
                 </nav>
             </div>
@@ -41,7 +35,8 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-    updateContent: PropTypes.func.isRequired
+    updateContent: PropTypes.func.isRequired,
+    activeMenuName: PropTypes.string.isRequired
 }
 
 export default Header;
