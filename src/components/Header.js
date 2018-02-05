@@ -24,7 +24,7 @@ class Header extends React.Component {
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
                             </button>
-                            <a className="navbar-brand" href="javascript:void(0);">PSHSH88</a>
+                            <a className="navbar-brand" href="javascript:void(0);">{this.props.title}</a>
                         </div>
                         <Menu activeMenuName={this.props.activeMenuName} updateActiveMenuName={this.updateActiveMenuName}/>
                     </div>
@@ -36,7 +36,8 @@ class Header extends React.Component {
 
 Header.propTypes = {
     updateContent: PropTypes.func.isRequired,
-    activeMenuName: PropTypes.string.isRequired
+    activeMenuName: PropTypes.string.isRequired,
+    title : PropTypes.string
 }
 
 export default Header;
