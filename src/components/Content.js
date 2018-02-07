@@ -1,5 +1,22 @@
 import React from 'react';
 import Jumbotron from './Jumbotron';
+import NoteContent from './NoteContent';
+
+var listGroupItemStyle = {
+    borderRadius: '0',
+    border: '1'
+}
+
+var asideStyle = { 
+    minWidth: '150px',
+    float: 'left'
+}
+
+var sectionStyle = {
+    width: 'auto',
+    float: 'left',
+    marginLeft: '10px'
+}
 
 class Content extends React.Component {
     updateContentBy(menuName) {
@@ -16,17 +33,7 @@ class Content extends React.Component {
             );
         } else if (menuName === "Note") {
             return (
-                <div>
-                    <div className="left-nav" style={{maxWidth:'20%', minWidth:'200px'}}>
-                        <div className="list-group">
-                            <a href="#" className="list-group-item">note1</a>
-                            <a href="#" className="list-group-item">note2</a>
-                            <a href="#" className="list-group-item">note3</a>
-                        </div>
-                    </div>
-                    <div className="note-area">
-                    </div>
-                </div>
+                <NoteContent />
             );
         } else if (menuName === "Practice") {
             return (
