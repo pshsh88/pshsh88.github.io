@@ -19322,8 +19322,8 @@ var Content = function (_React$Component) {
                     'div',
                     null,
                     _react2.default.createElement(_Jumbotron2.default, {
-                        title: 'Hello!',
-                        description: 'This page is under construction. please visit again after the updated.' }),
+                        title: 'Story of PSH',
+                        description: 'Hello. This page is under construction. Please visit again after the updated.' }),
                     _react2.default.createElement(
                         'div',
                         { className: 'container' },
@@ -19494,7 +19494,7 @@ var asideStyle = {
 var sectionStyle = {
     width: 'calc(100% - 200px)',
     float: 'left',
-    marginLeft: '10px'
+    marginLeft: '15px'
 };
 
 var NoteContent = function (_React$Component) {
@@ -19523,7 +19523,7 @@ var NoteContent = function (_React$Component) {
                         _react2.default.createElement(
                             'b',
                             null,
-                            '[TIP] IE8 \uC774\uD558\uC5D0\uC11C\uC758 Date Object \uC0DD\uC131'
+                            '1. IE8 \uC774\uD558\uC5D0\uC11C\uC758 Date Object \uC0DD\uC131'
                         )
                     ),
                     _react2.default.createElement(
@@ -19545,6 +19545,66 @@ var NoteContent = function (_React$Component) {
                         _react2.default.createElement(
                             'a',
                             { href: 'http://archer0001.blog.me/110168590373', target: 'blank' },
+                            'Link2'
+                        )
+                    ),
+                    _react2.default.createElement('br', null),
+                    _react2.default.createElement(
+                        'p',
+                        { style: { color: '#4169E1' } },
+                        _react2.default.createElement(
+                            'b',
+                            null,
+                            '2. Firefox \uD55C\uAE00 Key event \uBC1C\uC0DD \uC548\uD558\uB294 \uC774\uC288(keyup, keydown, keypress..)'
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'p',
+                        null,
+                        'firefox \uD55C\uAE00 key event \uC774\uC288 (\uC77C\uBCF8\uC5B4\uB3C4 \uB9C8\uCC2C\uAC00\uC9C0)'
+                    ),
+                    _react2.default.createElement(
+                        'p',
+                        null,
+                        '*\uCC38\uACE0 Link',
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement(
+                            'a',
+                            { href: 'https://github.com/nhnent/fe.javascript/wiki/%ED%95%9C%EA%B8%80-%EC%9E%85%EB%A0%A5%EC%8B%9C-%ED%82%A4%EC%9D%B4%EB%B2%A4%ED%8A%B8%EA%B0%80-%EC%9D%B4%EC%83%81%ED%95%B4%EC%9A%94', target: 'blank' },
+                            'Link1'
+                        )
+                    ),
+                    _react2.default.createElement('br', null),
+                    _react2.default.createElement(
+                        'p',
+                        { style: { color: '#4169E1' } },
+                        _react2.default.createElement(
+                            'b',
+                            null,
+                            '3. alert \uC774\uD6C4 input \uD3EC\uCEE4\uC2F1\uC774 \uC81C\uB300\uB85C \uB3D9\uC791\uD558\uC9C0 \uC54A\uB294 \uC774\uC288\uC640 setTimeout Trick \uCC38\uACE0 \uC790\uB8CC '
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'p',
+                        null,
+                        'input\uC5D0 \uC785\uB825 \uAC12\uC774 \uC5C6\uB294 \uACBD\uC6B0 alert\uC744 \uB744\uC6B0\uACE0 \uB2E4\uC2DC input\uC5D0 \uD3EC\uCEE4\uC2F1 \uD558\uB294 \uB85C\uC9C1\uC774 \uD06C\uB86C\uC5D0\uC11C\uB294 alert\uC774 \uACC4\uC18D\uD574\uC11C \uBC1C\uC0DD, IE \uBC0F Firefox\uC5D0\uC11C\uB294 input\uC5D0 \uD3EC\uCEE4\uC2F1\uC774 \uB418\uC9C0 \uC54A\uB294 \uC774\uC288\uAC00 \uC788\uC74C',
+                        _react2.default.createElement('br', null),
+                        'setTimeout Trick\uC744 \uC774\uC6A9\uD558\uC5EC \uD574\uACB0'
+                    ),
+                    _react2.default.createElement(
+                        'p',
+                        null,
+                        '*\uCC38\uACE0 Link',
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement(
+                            'a',
+                            { href: 'https://stackoverflow.com/questions/39789997/javascript-i-cant-stop-the-alert-method-in-chrome', target: 'blank' },
+                            'Link1'
+                        ),
+                        ',\xA0',
+                        _react2.default.createElement(
+                            'a',
+                            { href: 'https://www.quora.com/What-does-setTimeout-with-a-0ms-delay-do-Is-this-some-trick-to-spawn-a-new-thread-but-why?page_id=1#!n=18', target: 'blank' },
                             'Link2'
                         )
                     )
@@ -19591,8 +19651,8 @@ var NoteContent = function (_React$Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'list-group' },
-                        _react2.default.createElement(_NoteAsideListItem2.default, { noteId: '1', selectItem: this.selectItem, noteMenuTitle: 'JavaScript' }),
-                        _react2.default.createElement(_NoteAsideListItem2.default, { noteId: '2', selectItem: this.selectItem, noteMenuTitle: 'React' }),
+                        _react2.default.createElement(_NoteAsideListItem2.default, { noteId: '1', selectItem: this.selectItem, noteMenuTitle: 'JavaScript Tip' }),
+                        _react2.default.createElement(_NoteAsideListItem2.default, { noteId: '2', selectItem: this.selectItem, noteMenuTitle: 'ES6 \uC815\uB9AC' }),
                         _react2.default.createElement(_NoteAsideListItem2.default, { noteId: '3', selectItem: this.selectItem, noteMenuTitle: 'Git' })
                     )
                 ),

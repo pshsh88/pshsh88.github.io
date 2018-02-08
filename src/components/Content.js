@@ -24,8 +24,8 @@ class Content extends React.Component {
             return (
                 <div>
                     <Jumbotron 
-                            title="Hello!"
-                            description="This page is under construction. please visit again after the updated."/>
+                            title="Story of PSH"
+                            description="Hello. This page is under construction. Please visit again after the updated."/>
                     <div className="container">
                         <img src={require('../img/suzy.jpg')} style={{maxWidth:"100%",height:"auto"}} width="1742" height="1320" filemime="image/jpeg" />
                     </div>
