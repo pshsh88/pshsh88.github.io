@@ -6,31 +6,23 @@ var listGroupItemStyle = {
     border: '1'
 }
 
-class NoteAsideListItem extends React.Component {
-    getNoteName(noteId) {
-        return "#note" + noteId;
+const NoteAsideListItem = ({noteId, selectItem, noteMenuTitle}) => {
+    const getNoteName = (nId) => {
+        return "#note" + nId;
     }
 
-    selectItem() {
-        this.props.selectItem(this.props.noteId, this.props.noteMenuTitle);
+    const handleClickItem = () => {
+        selectItem(noteId, noteMenuTitle);
     }
-    
-    constructor(props) {
-        super(props);
-        this.getNoteName = this.getNoteName.bind(this);
-        this.selectItem = this.selectItem.bind(this);
-    }
-    
-    render() {
-        return (
-            <div>
-                <a href={this.getNoteName(this.props.noteId)} 
-                    className="list-group-item" 
-                    style={listGroupItemStyle} 
-                    onClick={this.selectItem}>{this.props.noteMenuTitle}</a>
-            </div>
-        );
-    }
+
+    return (
+        <div>
+            <a href={getNoteName(noteId)} 
+                className="list-group-item" 
+                style={listGroupItemStyle} 
+                onClick={handleClickItem}>{noteMenuTitle}</a>
+        </div>
+    );
 }
 
 NoteAsideListItem.propTypes = {

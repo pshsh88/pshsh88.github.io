@@ -71,7 +71,7 @@ class NoteContent extends React.Component {
         super(props);
         this.state = {
             noteId:'1',
-            noteMenuTitle:'JavaScript'
+            noteMenuTitle:'JavaScript Tip'
         }
         this.selectItem = this.selectItem.bind(this);
         this.getNoteSection = this.getNoteSection.bind(this);

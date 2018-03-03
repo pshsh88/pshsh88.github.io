@@ -2,33 +2,25 @@ import React from 'react';
 import MenuItem from './MenuItem';
 import PropTypes from 'prop-types';
 
-class Menu extends React.Component {
-    updateActiveMenuName(menuName) {
-        this.props.updateActiveMenuName(menuName);
+const Menu = ({activeMenuName, updateActiveMenuName}) => {
+    const handleUpdateMenu = (menuName) => {
+        updateActiveMenuName(menuName);
     }
     
-    isActiveMenu(menuName) {
-        return menuName === this.props.activeMenuName;
+    const isActiveMenu = (menuName) => {
+        return menuName === activeMenuName;
     }
     
-    constructor(props) {
-        super(props);
-        this.updateActiveMenuName = this.updateActiveMenuName.bind(this);
-        this.isActiveMenu = this.isActiveMenu.bind(this);
-    }
-    
-    render(){
-        return (
+    return (
             <div id="navbar" className="collapse navbar-collapse">
                 <ul className="nav navbar-nav">
-                    <MenuItem name="Home" active={this.isActiveMenu("Home")} updateActiveMenuName={this.updateActiveMenuName}/>
-                    <MenuItem name="Note" active={this.isActiveMenu("Note")} updateActiveMenuName={this.updateActiveMenuName}/>
-                    <MenuItem name="Practice" active={this.isActiveMenu("Practice")} updateActiveMenuName={this.updateActiveMenuName}/>
-                    <MenuItem name="About" active={this.isActiveMenu("About")} updateActiveMenuName={this.updateActiveMenuName}/>
+                    <MenuItem name="Home" active={isActiveMenu("Home")} updateActiveMenuName={handleUpdateMenu}/>
+                    <MenuItem name="Note" active={isActiveMenu("Note")} updateActiveMenuName={handleUpdateMenu}/>
+                    <MenuItem name="Practice" active={isActiveMenu("Practice")} updateActiveMenuName={handleUpdateMenu}/>
+                    <MenuItem name="About" active={isActiveMenu("About")} updateActiveMenuName={handleUpdateMenu}/>
                 </ul>
             </div>
         );
-    }
 }
 
 Menu.propTypes = {

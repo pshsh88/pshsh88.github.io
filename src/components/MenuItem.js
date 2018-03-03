@@ -1,26 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class MenuItem extends React.Component {
-    updateActivation() {
-        this.props.updateActiveMenuName(this.props.name);
+const MenuItem = ({name, active, updateActiveMenuName}) => {
+    const updateActivation = () => {
+        updateActiveMenuName(name);
     }
     
-    getLink(name) {
+    const getLink = (name) => {
         return "#" + (name ? name.toLowerCase() : "");
     }
     
-    constructor(props) {
-        super(props);
-        this.updateActivation = this.updateActivation.bind(this);
-        this.getLink = this.getLink.bind(this);
-    }
-    
-    render(){
-        return (
-            <li className={this.props.active ? "active" : ""}><a href={this.getLink(this.props.name)} onClick={this.updateActivation}>{this.props.name}</a></li>
-        );
-    }
+    return (
+        <li className={active ? "active" : ""}><a href={getLink(name)} onClick={updateActivation}>{name}</a></li>
+    );
 }
 
 MenuItem.propTypes = {
